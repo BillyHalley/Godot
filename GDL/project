@@ -1,0 +1,33 @@
+Personaggi:
+    - Ognuno bici in dotazione
+    - Resistenza
+    - Ingegno
+    - Morale
+
+Bici:
+    - Velocità
+    - Sforzo
+    - Affidabilità
+
+Carrello
+    - Peso
+    - Affidabilità
+
+Equipaggiamento
+    - Soldi
+    - Cibo
+    - Cose per cucinare
+    - Attrezzi generici
+    - Riparazione Bici
+    - Tende
+    - Elettronica
+
+Follower
+    - Post
+    - Like
+    - Fama
+
+Campeggi ( O luoghi di campeggio generici )
+    - costo
+    - comodità
+    - svago

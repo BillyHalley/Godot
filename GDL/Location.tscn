@@ -1,0 +1,35 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Location.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+
+[node name="Node" type="Node2D"]
+
+modulate = Color( 0, 1, 0.015625, 1 )
+position = Vector2( 32, 32 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+__meta__ = {
+"_edit_group_": true
+}
+next = null
+distance = null
+reward = null
+
+[node name="Button" type="TouchScreenButton" parent="." index="0"]
+
+position = Vector2( -32, -32 )
+normal = ExtResource( 2 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+_sections_unfolded = [ "Transform" ]
+
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+
