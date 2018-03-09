@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Menu.gd" type="Script" id=1]
+[ext_resource path="res://icon.png" type="Texture" id=2]
 
 [node name="Menu" type="Node" index="0"]
 
@@ -34,6 +35,19 @@ align = 0
 items = [ "100", null, false, 0, null, "200", null, false, 1, null, "350", null, false, 2, null ]
 selected = 0
 
-[connection signal="item_selected" from="InitialScore" to="." method="_on_InitialScore_item_selected"]
+[node name="TouchScreenButton" type="TouchScreenButton" parent="." index="1"]
+
+position = Vector2( 777, 321 )
+normal = ExtResource( 2 )
+pressed = null
+bitmask = null
+shape = null
+shape_centered = true
+shape_visible = true
+passby_press = false
+action = ""
+visibility_mode = 0
+
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_TouchScreenButton_pressed"]
 
 

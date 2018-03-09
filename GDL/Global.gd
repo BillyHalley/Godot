@@ -12,8 +12,8 @@ func _ready():
 	pass
 	
 func next_turn(next_location):
-	print("next_turn")
 	if CURRENT_LOCATION.paths.has(next_location):
+		print("next_turn")
 		var distance = CURRENT_LOCATION.paths.next_location
 		CURRENT_LOCATION = CURRENT_LOCATION.keys()[CURRENT_LOCATION.keys().find(next_location)]
 		score = score - distance + CURRENT_LOCATION.reward

@@ -7,6 +7,8 @@ func _ready():
 	locations = $Locations.get_children()
 	current_location = locations[locations.find(Global.CURRENT_LOCATION.name)]
 	$Party.position = current_location.position
+	var loc = $Location.new()
+	loc.position = Vector2d(60,60)
 	pass
 
 func _process(delta):
@@ -30,6 +32,6 @@ func _on_Touch0_pressed():
 #		next_location = locations[0]
 #		move_player($Party, current_location, 75)
 #
-#func move_player(player, location, prize):
-#	player.move(location.position, prize)
+func move_player(player, location, prize):
+	player.move(location.position, prize)
 #
