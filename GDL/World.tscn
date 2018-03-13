@@ -19,23 +19,36 @@ _sections_unfolded = [ "Z Index" ]
 
 [node name="Locations" type="Node" parent="." index="2"]
 
+editor/display_folded = true
+
 [node name="Loc_A" parent="Locations" index="0" instance=ExtResource( 4 )]
 
 position = Vector2( 320, 160 )
-next = NodePath("../Loc_B")
+next_path = NodePath("../Loc_B")
+distance_from_previous = 50
 reward = 75
 
 [node name="Loc_B" parent="Locations" index="1" instance=ExtResource( 4 )]
 
 position = Vector2( 1120, 192 )
-next = NodePath("../Loc_C")
+next_path = NodePath("../Loc_C")
+distance_from_previous = 100
 reward = 150
 
 [node name="Loc_C" parent="Locations" index="2" instance=ExtResource( 4 )]
 
 position = Vector2( 480, 544 )
 _sections_unfolded = [ "Visibility", "Z Index" ]
-next = NodePath("../Loc_A")
+next_path = NodePath("../Loc_D")
+distance_from_previous = 250
 reward = 300
+
+[node name="Loc_D" parent="Locations" index="3" instance=ExtResource( 4 )]
+
+position = Vector2( 960, 544 )
+_sections_unfolded = [ "Visibility", "Z Index" ]
+next_path = NodePath("../Loc_A")
+distance_from_previous = 150
+reward = 100
 
 

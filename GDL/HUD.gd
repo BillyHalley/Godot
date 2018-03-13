@@ -7,6 +7,3 @@ func _ready():
 
 func update_score():
 	$Score.text = "Score: " + str(Global.score)
-
-func _on_TouchScreenButton_pressed():
-	print("Touched")

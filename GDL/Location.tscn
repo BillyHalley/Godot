@@ -3,7 +3,7 @@
 [ext_resource path="res://Location.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[node name="Node" type="Node2D"]
+[node name="Node" type="Node2D" index="0"]
 
 modulate = Color( 0, 1, 0.015625, 1 )
 position = Vector2( 32, 32 )
@@ -12,8 +12,8 @@ _sections_unfolded = [ "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
-next = null
-distance = null
+next_path = null
+distance_from_previous = null
 reward = null
 
 [node name="Button" type="TouchScreenButton" parent="." index="0"]

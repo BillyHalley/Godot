@@ -4,21 +4,18 @@ var locations
 var current_location
 
 func _ready():
-	locations = $Locations.get_children()
-	current_location = locations[locations.find(Global.CURRENT_LOCATION.name)]
-	$Party.position = current_location.position
-	var loc = $Location.new()
-	loc.position = Vector2d(60,60)
+	Global.CURRENT_LOCATION = $Locations/Loc_A
+	$Party.position = Global.CURRENT_LOCATION.position
 	pass
 
 func _process(delta):
 	pass
 
 
-func _on_Touch0_pressed():
-	if(!$Party.moving and Global.CURRENT_LOCATION.paths.has_key('Loc_A')):
-		current_location = locations[0]
-		move_player($Party, current_location, 100)
+#func _on_Touch0_pressed():
+#	if(!$Party.moving and Global.CURRENT_LOCATION.paths.has_key('Loc_A')):
+#		current_location = locations[0]
+#		move_player($Party, current_location, 100)
 #
 #func _on_Touch1_pressed():
 #	if(!$Party.moving):
@@ -32,6 +29,6 @@ func _on_Touch0_pressed():
 #		next_location = locations[0]
 #		move_player($Party, current_location, 75)
 #
-func move_player(player, location, prize):
-	player.move(location.position, prize)
+func move_party(location):
+	$Party.move(location)
 #
