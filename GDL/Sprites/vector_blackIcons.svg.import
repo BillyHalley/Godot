@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/UIpackSheet_transparent.png-2c5c6a8b3122abd4c4938ddf6e471117.stex"
+path="res://.import/vector_blackIcons.svg-94c487d66089d57f6cf314e58eb97a28.stex"
 
 [deps]
 
-source_file="res://UIpackSheet_transparent.png"
-source_md5="732a2601de2bb6a08b98b95a1643bd12"
+source_file="res://Sprites/vector_blackIcons.svg"
+source_md5="85041aab7fb6a44e0b742a7a8a1f82da"
 
-dest_files=[ "res://.import/UIpackSheet_transparent.png-2c5c6a8b3122abd4c4938ddf6e471117.stex" ]
-dest_md5="e9755544e8760b061b9daf8244574166"
+dest_files=[ "res://.import/vector_blackIcons.svg-94c487d66089d57f6cf314e58eb97a28.stex" ]
+dest_md5="f447325c0e0784b3cf3102621f96639f"
 
 [params]
 

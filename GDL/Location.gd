@@ -19,10 +19,11 @@ func _ready():
 	print("ready " + name)
 	var t = name + "\nDist.: " + str(distance_from_previous) + "\nReward: " + str(reward)
 	$Label.text = t
+	modulate = Color(1,0.8,0,1)
 	pass
 
 func _on_Button_pressed():
-	if(!PARTY.moving):
+	if(!PARTY.moving and Global.CURRENT_LOCATION != THIS):
 		var dist = total_dist(Global.CURRENT_LOCATION, THIS)
 		DIALOG.dialog_text = "Affaticamento totale: %d\nRiposo: %d" % [dist,THIS.reward]
 		DIALOG.popup()

@@ -1,12 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Location.gd" type="Script" id=1]
-[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/icon.png" type="Texture" id=2]
 [ext_resource path="res://ConfirmationDialog.gd" type="Script" id=3]
 
-[node name="Node" type="Node2D" index="0"]
+[node name="Node" type="Node2D"]
 
-modulate = Color( 1, 0.75, 0, 1 )
 position = Vector2( 32, 32 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
@@ -26,7 +25,7 @@ shape_visible = true
 passby_press = false
 action = ""
 visibility_mode = 0
-_sections_unfolded = [ "Transform" ]
+_sections_unfolded = [ "Transform", "Visibility" ]
 __meta__ = {
 "_edit_group_": true
 }
@@ -55,6 +54,7 @@ max_lines_visible = -1
 
 [node name="RestPopup" type="ConfirmationDialog" parent="." index="2"]
 
+visible = false
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0

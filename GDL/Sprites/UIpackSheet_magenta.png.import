@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex"
+path="res://.import/UIpackSheet_magenta.png-647515b48e277bfb00c642272a569ba0.stex"
 
 [deps]
 
-source_file="res://icon.png"
-source_md5="ae7e641067601e2184afcade49abd283"
+source_file="res://Sprites/UIpackSheet_magenta.png"
+source_md5="5a6acf86dbb1815cb9e4fb6d4a8a61b2"
 
-dest_files=[ "res://.import/icon.png-487276ed1e3a0c39cad0279d744ee560.stex" ]
-dest_md5="84511021bbc8c9d37c7f0f4d181de883"
+dest_files=[ "res://.import/UIpackSheet_magenta.png-647515b48e277bfb00c642272a569ba0.stex" ]
+dest_md5="477cb44b856cf218a63a13a7771a2afb"
 
 [params]
 
