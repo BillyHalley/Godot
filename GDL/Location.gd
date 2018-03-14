@@ -7,18 +7,35 @@ onready var next = get_node(next_path)
 export(int) var distance_from_previous
 export(int) var reward
 
-onready var this = get_node(get_path())
+onready var THIS = get_node(get_path())
+
+onready var PARTY = get_node("../../Party")
+
+onready var HUD = get_node("../../HUD")
+
+onready var DIALOG = get_node("../../Dialog")
 
 func _ready():
+	print("ready " + name)
+	var t = name + "\nDist.: " + str(distance_from_previous) + "\nReward: " + str(reward)
+	$Label.text = t
 	pass
 
 func _on_Button_pressed():
-	move(next)
+	if(!PARTY.moving):
+		var dist = total_dist(Global.CURRENT_LOCATION, THIS)
+		DIALOG.dialog_text = "Affaticamento totale: %d\nRiposo: %d" % [dist,THIS.reward]
+		DIALOG.popup()
+		Global.temp_locations = find_destinations(Global.CURRENT_LOCATION, THIS)
+		
+func find_destinations(initial, final):
+	var locations = [initial.next]
+	if(initial.next != final):
+		locations += find_destinations(initial.next, final)
+	return locations
 	
-func move(next_location):
-	if( Global.CURRENT_LOCATION.next == this):
-		get_node("../../Party").move(this)
-		Global.CURRENT_LOCATION = this
-		Global.score -= distance_from_previous
-		Global.score += reward
-		get_node("../../HUD").update_score()
+func total_dist(initial, final):
+	var dist = initial.next.distance_from_previous
+	if(initial.next != final):
+		dist += total_dist(initial.next, final)
+	return dist
