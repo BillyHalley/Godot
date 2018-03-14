@@ -26,7 +26,7 @@ func _on_Button_pressed():
 	if(!PARTY.moving and Global.CURRENT_LOCATION != THIS):
 		var dist = total_dist(Global.CURRENT_LOCATION, THIS)
 		DIALOG.dialog_text = "Affaticamento totale: %d\nRiposo: %d" % [dist,THIS.reward]
-		DIALOG.popup()
+		DIALOG.popup_centered()
 		Global.temp_locations = find_destinations(Global.CURRENT_LOCATION, THIS)
 		
 func find_destinations(initial, final):
