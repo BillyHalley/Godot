@@ -39,3 +39,10 @@ func total_dist(initial, final):
 	if(initial.next != final):
 		dist += total_dist(initial.next, final)
 	return dist
+
+func rest_popup():
+	$RestPopup.popup_centered()
+
+func _on_ConfirmationDialog_confirmed():
+	Global.score += reward
+	HUD.update_score()

@@ -1,17 +1,15 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Location.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://ConfirmationDialog.gd" type="Script" id=3]
 
-[node name="Node" type="Node2D"]
+[node name="Node" type="Node2D" index="0"]
 
-modulate = Color( 0, 1, 0.015625, 1 )
+modulate = Color( 1, 0.75, 0, 1 )
 position = Vector2( 32, 32 )
 script = ExtResource( 1 )
 _sections_unfolded = [ "Visibility" ]
-__meta__ = {
-"_edit_group_": true
-}
 next_path = null
 distance_from_previous = null
 reward = null
@@ -29,6 +27,9 @@ passby_press = false
 action = ""
 visibility_mode = 0
 _sections_unfolded = [ "Transform" ]
+__meta__ = {
+"_edit_group_": true
+}
 
 [node name="Label" type="Label" parent="." index="1"]
 
@@ -52,6 +53,32 @@ percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 
+[node name="RestPopup" type="ConfirmationDialog" parent="." index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -32.0
+margin_top = 96.0
+margin_right = 168.0
+margin_bottom = 166.0
+rect_min_size = Vector2( 200, 70 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+popup_exclusive = false
+window_title = "Please Confirm..."
+resizable = false
+dialog_hide_on_ok = true
+script = ExtResource( 3 )
+_sections_unfolded = [ "Dialog" ]
+
 [connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
+
+[connection signal="confirmed" from="RestPopup" to="." method="_on_ConfirmationDialog_confirmed"]
 
 

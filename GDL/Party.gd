@@ -2,44 +2,29 @@ extends KinematicBody2D
 
 const SPEED = 250
 
-var motion = Vector2()
-var dest = Vector2()
 var moving = false
-var prize = 0
 var movement_path = []
-
-func move(destination):
-	motion = destination.position - position
-	dest = destination.position
-	moving = true
+var destination_node
 	
-
 func _process(delta):
-	if( movement_path.size() > 1 and !moving):
-		var d = movement_path.pop_front()
-		print("first: " + d.name)
-		for loc in movement_path:
-			print(loc.name)
-		move(d)
-		Global.score -= d.distance_from_previous
-	elif(movement_path.size() == 1 and !moving):
-		var d = movement_path.pop_front()
-		print("first: " + d.name)
-		for loc in movement_path:
-			print(loc.name)
-		move(d)
-		Global.score -= d.distance_from_previous
-		Global.score += d.reward
-		Global.CURRENT_LOCATION = d
-		print("Current: " + Global.CURRENT_LOCATION.name)
-	if( position.distance_to(dest) < SPEED/100 and moving):
-		position = dest
-		motion = Vector2()
-		moving = false
-		get_node("../HUD").update_score()
-	move_and_slide(motion.normalized() * SPEED)
-
-
+	if(!moving): 
+		if( movement_path.size() > 0):
+			destination_node = movement_path.pop_front()
+			moving = true
+	else:
+		var distance = destination_node.get_global_transform().origin - get_global_transform().origin
+		if( distance.length() < 5 ):
+			position = destination_node.position
+			moving = false
+			Global.score -= destination_node.distance_from_previous
+			Global.CURRENT_LOCATION = destination_node
+			get_node("../HUD").update_score()
+			destination_node.modulate = Color(0,1,0,1)
+			if( movement_path.size() == 0 ):
+				destination_node.rest_popup()
+		else:
+			var dir = distance.normalized()
+			global_translate(dir*delta*SPEED)
 
 func _on_Dialog_confirmed():
 	movement_path = Global.temp_locations
